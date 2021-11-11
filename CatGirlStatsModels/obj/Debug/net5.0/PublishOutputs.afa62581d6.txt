@@ -1,0 +1,3 @@
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\bin\Debug\net5.0\publish\CatGirlStatsModels.dll
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\bin\Debug\net5.0\publish\CatGirlStatsModels.deps.json
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\bin\Debug\net5.0\publish\CatGirlStatsModels.pdb

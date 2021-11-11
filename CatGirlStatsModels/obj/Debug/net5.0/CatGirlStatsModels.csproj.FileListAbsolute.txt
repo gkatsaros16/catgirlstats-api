@@ -1,0 +1,12 @@
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\bin\Debug\net5.0\CatGirlStatsModels.deps.json
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\bin\Debug\net5.0\CatGirlStatsModels.dll
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\bin\Debug\net5.0\ref\CatGirlStatsModels.dll
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\bin\Debug\net5.0\CatGirlStatsModels.pdb
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\CatGirlStatsModels.csproj.AssemblyReference.cache
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\CatGirlStatsModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\CatGirlStatsModels.AssemblyInfoInputs.cache
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\CatGirlStatsModels.AssemblyInfo.cs
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\CatGirlStatsModels.csproj.CoreCompileInputs.cache
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\CatGirlStatsModels.dll
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\ref\CatGirlStatsModels.dll
+C:\Users\George\Documents\catgirl-stats-api\CatGirlStatsModels\obj\Debug\net5.0\CatGirlStatsModels.pdb
