@@ -11,13 +11,17 @@ namespace CatgirlStatsLogic.Services
     public class CatgirlStatsService : ICatgirlStatsService
     {
         public readonly ICatgirlStatsConsumer _consumer;
+        public readonly Secrets _secrets;
         public CatgirlStatsService(
-            ICatgirlStatsConsumer consumer
+            ICatgirlStatsConsumer consumer,
+            Secrets secrets
         ) 
         {
             _consumer = consumer;
+            _secrets = secrets;
         }
         public async Task<string> HelloWorld() {
+            Console.WriteLine(_secrets.CatgirlStatsDBPass);
             return await Task.Run(() => "Hello World");
         }
 
@@ -34,7 +38,7 @@ namespace CatgirlStatsLogic.Services
         public async Task<IEnumerable<CatgirlsDomain>> GetCatgirls() 
         {
             var catgirls = new List<CatgirlsDomain>();
-            using (MySqlConnection conn = new MySqlConnection("server=host.docker.internal;user=root;database=catgirls_stats;port=3306;password=root"))
+            using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("select * from catgirls LIMIT 0, 300000", conn);
@@ -61,7 +65,7 @@ namespace CatgirlStatsLogic.Services
         public async Task<int> GetMaxCatgirlIdDecimal() 
         {
             var maxCatgirlId = 0;
-            using (MySqlConnection conn = new MySqlConnection("server=host.docker.internal;user=root;database=catgirls_stats;port=3306;password=root"))
+            using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT CatgirlIdDecimal from catgirls LIMIT 94000, 220000", conn);
@@ -78,7 +82,7 @@ namespace CatgirlStatsLogic.Services
         public async Task<IEnumerable<CatgirlNyaScoreWithCount>> GetAllCatgirlsNyaScoreCount(CatgirlsDomain catgirl) 
         {
             var catgirls = new List<CatgirlNyaScoreWithCount>();
-            using (MySqlConnection conn = new MySqlConnection("server=host.docker.internal;user=root;database=catgirls_stats;port=3306;password=root"))
+            using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(@"
@@ -119,7 +123,7 @@ namespace CatgirlStatsLogic.Services
                 CatgirlRarity = catgirl.Rarity,
                 CatgirlSeason = catgirl.Season
             };
-            using (MySqlConnection conn = new MySqlConnection("server=host.docker.internal;user=root;database=catgirls_stats;port=3306;password=root"))
+            using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {
                 conn.Open();
                 MySqlCommand cmd = conn.CreateCommand();

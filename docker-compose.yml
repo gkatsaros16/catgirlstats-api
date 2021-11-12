@@ -1,0 +1,17 @@
+version: "3"
+services:
+    web:
+        image: geokatzz1/catgirl-stats-api
+        expose:
+            - "5000"
+    proxy:
+        build:
+            context:  ./nginx
+            dockerfile: Dockerfile
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+             - /etc/letsencrypt/:/etc/letsencrypt/
+        links:
+            - web
