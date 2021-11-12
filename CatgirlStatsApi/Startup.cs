@@ -1,5 +1,7 @@
+using System;
 using System.IO;
 using CatgirlStatsLogic.Services;
+using CatgirlStatsModels;
 using GraphQL.Client.Abstractions;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
@@ -20,11 +22,11 @@ namespace CatgirlStatsApi
         }
 
         public IConfiguration Configuration { get; }
+        public IServiceProvider ServiceProvider { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddCors(o => o.AddPolicy("Enable", builder =>
             {
                 builder.AllowAnyOrigin()
@@ -46,6 +48,10 @@ namespace CatgirlStatsApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CatgirlStatsApi", Version = "v1" });
             });
+            var secrets = new Secrets {
+                CatgirlStatsDBPass = Configuration["CATGIRLSTATSDBPASS"]
+            };
+            services.AddSingleton(secrets);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +63,7 @@ namespace CatgirlStatsApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CatgirlStatsApi v1"));
             }
-            
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
