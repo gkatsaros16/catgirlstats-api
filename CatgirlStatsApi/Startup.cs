@@ -44,12 +44,13 @@ namespace CatgirlStatsApi
             
             services.AddScoped<ICatgirlStatsConsumer, CatgirlStatsConsumer>();
             services.AddScoped<ICatgirlStatsService, CatgirlStatsService>(); 
+            services.AddScoped<IBNBService, BNBService>(); 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CatgirlStatsApi", Version = "v1" });
             });
             var secrets = new Secrets {
-                CatgirlStatsDBPass = Configuration["CATGIRLSTATSDBPASS"]
+                CatgirlStatsDBPass = Configuration["CATGIRLSTATSDBPASS"] ?? ""
             };
             services.AddSingleton(secrets);
         }
