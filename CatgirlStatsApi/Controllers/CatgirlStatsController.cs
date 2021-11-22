@@ -45,7 +45,7 @@ namespace CatgirlStatsApi.Controllers
         public async Task AddCatgirl()
         {
             var lastAdded = await _catgirlStatsService.GetMaxCatgirlIdDecimal();
-            for (int i = lastAdded + 1; i <= 300000; i++)
+            for (int i = lastAdded + 1; i <= 350000; i++)
             {
                 var hex = "0x" + i.ToString("X").ToLower();
                 await _catgirlStatsService.AddCatgirl(hex);
