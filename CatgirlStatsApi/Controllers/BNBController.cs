@@ -31,6 +31,12 @@ namespace BNBApi.Controllers
         {
             return await _BNBService.GetBNBCurrentPrice();
         }
+
+        [HttpGet]
+        public async Task<string> GetBNBPriceForToday()
+        {
+            return await _BNBService.GetBNBPriceForToday();
+        }
         
         [HttpGet]
         public async Task SetBNBCurrentPrice()

@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 RUN apt-get update ;\
     apt-get install -y tzdata
-ENV ASPNETCORE_URLS http://+:5000/
+ENV ASPNETCORE_URLS http://+:5000
 EXPOSE 5000
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build

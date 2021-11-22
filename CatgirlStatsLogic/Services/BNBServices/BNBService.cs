@@ -33,7 +33,7 @@ namespace CatgirlStatsLogic.Services
             using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {               
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT price FROM `catgirls-stats`.bnbcurrentprice ORDER BY id DESC LIMIT 0, 1", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT price FROM `catgirl_stats`.bnbcurrentprice ORDER BY id DESC LIMIT 0, 1", conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read()) 
@@ -50,7 +50,7 @@ namespace CatgirlStatsLogic.Services
             using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {               
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT Average FROM `catgirls-stats`.bnbprice where date = @date", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Average FROM `catgirl_stats`.bnbprice where date = @date", conn);
                 cmd.Parameters.AddWithValue("@date", date);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -83,7 +83,7 @@ namespace CatgirlStatsLogic.Services
             using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {               
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO `catgirls-stats`.bnbcurrentprice (price, date) VALUES (@price, @date);", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `catgirl_stats`.bnbcurrentprice (price, date) VALUES (@price, @date);", conn);
                 cmd.Parameters.AddWithValue("@price", price);
                 cmd.Parameters.AddWithValue("@date", format);
                 await Task.Run(() => cmd.ExecuteNonQuery());
@@ -136,7 +136,7 @@ namespace CatgirlStatsLogic.Services
             using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {               
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO `catgirls-stats`.bnbprice (average, date) VALUES (@average, @date);", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `catgirl_stats`.bnbprice (average, date) VALUES (@average, @date);", conn);
                 cmd.Parameters.AddWithValue("@average", average);
                 cmd.Parameters.AddWithValue("@date", date);
                 await Task.Run(() => cmd.ExecuteNonQuery());
