@@ -6,6 +6,7 @@
     <PackageReference Include="GraphQL.Client" Version="4.0.1"/>
     <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="4.0.1"/>
     <PackageReference Include="MySql.Data" Version="8.0.27"/>
+    <PackageReference Include="Quartz" Version="3.3.3"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CatGirlStatsModels\CatGirlStatsModels.csproj"/>
