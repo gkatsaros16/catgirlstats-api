@@ -61,4 +61,3 @@ C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsApi\bin\Debug\net5.0\pub
 C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsApi\bin\Debug\net5.0\publish\publish\CatgirlStatsApi.deps.json
 C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsApi\bin\Debug\net5.0\publish\publish\CatgirlStatsApi.runtimeconfig.json
 C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsApi\bin\Debug\net5.0\Quartz.dll
-C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsApi\obj\Debug\net5.0\CatgirlStatsApi.csproj.CopyComplete

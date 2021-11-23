@@ -50,6 +50,7 @@ namespace CatgirlStatsApi
             services.AddScoped<ICatgirlStatsConsumer, CatgirlStatsConsumer>();
             services.AddScoped<ICatgirlStatsService, CatgirlStatsService>(); 
             services.AddScoped<IBNBService, BNBService>(); 
+            services.AddScoped<ITofuNFTService, TofuNFTService>(); 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CatgirlStatsApi", Version = "v1" });
