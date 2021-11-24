@@ -67,7 +67,7 @@ namespace CatgirlStatsLogic.Services
             using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT CatgirlIdDecimal from catgirls LIMIT 200000, 500000", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT CatgirlIdDecimal from catgirls LIMIT 350000, 500000", conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) 
                 {

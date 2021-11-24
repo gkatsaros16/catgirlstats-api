@@ -94,10 +94,8 @@ namespace CatgirlStatsLogic.Services
         public async Task SetBNBPreviousDayPrice()
         {
             var prices = new List<BNBPriceModel>();
-            var date = DateTime.Today.AddDays(-1);
-            var format = date.ToString("M/d/yyyy");
             var today = DateTime.Today;
-            var tformat = date.ToString("M/d/yyyy");
+            var format = today.ToString("M/d/yyyy");
             using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
             {               
                 conn.Open();
@@ -128,13 +126,13 @@ namespace CatgirlStatsLogic.Services
             });
             var average = sum / prices.Count;
 
-            await SetBNBHistoricalPrice(average.ToString(), tformat);
+            await SetBNBHistoricalPrice(average.ToString(), format);
         }
 
         public async Task SetBNBHistoricalPrice(string average, string date)
         {
             using (MySqlConnection conn = new MySqlConnection($"server=127.0.0.1;user=root;database=catgirl_stats;port=3306;password={_secrets.CatgirlStatsDBPass}"))
-            {               
+            {   
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO `catgirl_stats`.bnbprice (average, date) VALUES (@average, @date);", conn);
                 cmd.Parameters.AddWithValue("@average", average);
