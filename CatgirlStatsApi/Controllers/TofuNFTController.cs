@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CatgirlStatsLogic.Services;
 using CatgirlStatsModels;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace CatgirlStatsApi.Controllers
 {
+    [EnableCors("Enable")]
     [ApiController]
     [Route("[controller]/[action]")]
     public class TofuNFTController : ControllerBase
@@ -18,7 +19,7 @@ namespace CatgirlStatsApi.Controllers
             _tofuNFTService = tofuNFTService;
         }
         [HttpGet]
-        public async Task<dynamic> GetTofuNFTs()
+        public async Task<IEnumerable<NFTListingModel>> GetTofuNFTs()
         {
             return await _tofuNFTService.GetTofuNFTs();
         }         

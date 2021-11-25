@@ -1,12 +1,11 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using CatgirlStatsLogic.Services;
-using CatgirlStatsModels;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace CatgirlStatsApi.Controllers
 {
+    [EnableCors("Enable")]
     [ApiController]
     [Route("[controller]/[action]")]
     public class HealthCheck : ControllerBase
