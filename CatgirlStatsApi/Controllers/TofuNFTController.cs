@@ -18,7 +18,7 @@ namespace CatgirlStatsApi.Controllers
             _tofuNFTService = tofuNFTService;
         }
         [HttpGet]
-        public async Task<string> GetTofuNFTs()
+        public async Task<dynamic> GetTofuNFTs()
         {
             return await _tofuNFTService.GetTofuNFTs();
         }         
