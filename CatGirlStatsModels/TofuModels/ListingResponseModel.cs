@@ -20,7 +20,7 @@ namespace CatgirlStatsModels
         public ListingResponseNFTContractModel NFT_Contract { get; set; }
         public string Price { get; set; }
         public string Type { get; set; }
-        public string End_At { get; set; }
+        public string Created_At { get; set; }
     }
 
     public class ListingResponseNFTModel

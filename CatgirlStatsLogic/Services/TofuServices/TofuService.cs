@@ -50,7 +50,8 @@ namespace CatgirlStatsLogic.Services
                 Price = x.Price,
                 TokenID = x.NFT.Token_Id,
                 Type = 2,
-                SellType = x.Type
+                SellType = x.Type,
+                ListedAt = x.Created_At
             });
         }
     }
