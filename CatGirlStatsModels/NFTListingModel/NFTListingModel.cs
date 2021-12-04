@@ -11,5 +11,7 @@ namespace CatgirlStatsModels
         public string TokenID { get; set; }
         public int? Type { get; set; }
         public string SellType { get; set; }
+        public string Owner { get; set; }
+        public bool? IsBundle { get; set; }
     }
 }

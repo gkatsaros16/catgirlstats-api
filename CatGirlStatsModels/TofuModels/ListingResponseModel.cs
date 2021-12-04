@@ -21,6 +21,7 @@ namespace CatgirlStatsModels
         public string Price { get; set; }
         public string Type { get; set; }
         public string Created_At { get; set; }
+        public bool? Is_Bundle { get; set; }
     }
 
     public class ListingResponseNFTModel
@@ -29,6 +30,7 @@ namespace CatgirlStatsModels
         public ListingResponseNFTMetaModel Meta { get; set; }
         public string NFT_Contract { get; set; }
         public string Token_Id { get; set; }
+        public string Owner { get; set; }
     }
 
     public class ListingResponseNFTMetaModel

@@ -14,4 +14,3 @@ C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsLogic\bin\Debug\net5.0\S
 C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsLogic\bin\Debug\net5.0\System.Reactive.xml
 C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsLogic\bin\Debug\net5.0\CatGirlStatsModels.dll
 C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsLogic\bin\Debug\net5.0\CatGirlStatsModels.pdb
-C:\Users\George\Documents\catgirl-stats-api\CatgirlStatsLogic\obj\Debug\net5.0\CatgirlStatsLogic.csproj.CopyComplete

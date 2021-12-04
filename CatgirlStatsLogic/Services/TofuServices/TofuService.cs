@@ -51,7 +51,9 @@ namespace CatgirlStatsLogic.Services
                 TokenID = x.NFT.Token_Id,
                 Type = 2,
                 SellType = x.Type,
-                ListedAt = x.Created_At
+                ListedAt = x.Created_At,
+                Owner = x.NFT.Owner,
+                IsBundle = x.Is_Bundle
             });
         }
     }
