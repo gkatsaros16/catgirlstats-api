@@ -8,5 +8,6 @@ namespace CatgirlStatsLogic.Services
     {
         Task<IEnumerable<NFTradeListingResponseModel>> GetNFTradeListing();
         Task<IEnumerable<NFTradeSalesResponseModel>> GetNFTradeSales();
+        Task<IEnumerable<NFTradeSalesResponseModel>> GetNFTradeSales500();
     }
 }

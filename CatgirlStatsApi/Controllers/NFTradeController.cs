@@ -28,6 +28,12 @@ namespace CatgirlStatsApi.Controllers
         public async Task<IEnumerable<NFTradeSalesResponseModel>> GetNFTradeSales()
         {
             return await _NFTradeService.GetNFTradeSales();
+        }    
+
+        [HttpGet]
+        public async Task<IEnumerable<NFTradeSalesResponseModel>> GetNFTradeSales500()
+        {
+            return await _NFTradeService.GetNFTradeSales500();
         }         
     }
 }

@@ -34,11 +34,26 @@ namespace CatgirlStatsLogic.Services
 
         public async Task<IEnumerable<NFTradeSalesResponseModel>> GetNFTradeSales() 
         {        
-            var response = await _http.GetAsync("https://api.nftrade.com/api/v1/tokens?limit=1000&skip=0&search=catgirl&order=&verified=&sort=sold_desc");
+            var response = await _http.GetAsync("https://api.nftrade.com/api/v1/tokens?limit=100&skip=0&search=catgirl&order=&verified=&sort=sold_desc");
             var json = response.Content.ReadAsStringAsync().Result;
             Console.WriteLine(json);
             var res = JsonConvert.DeserializeObject<IEnumerable<NFTradeSalesResponseModel>>(json);
             return res;
+        }
+        public async Task<IEnumerable<NFTradeSalesResponseModel>> GetNFTradeSales500() 
+        {   
+            var final = new List<NFTradeSalesResponseModel>();
+            var skips = new[] {0, 100, 200, 300, 400};
+            foreach (var skip in skips)
+            {
+                var response = await _http.GetAsync($"https://api.nftrade.com/api/v1/tokens?limit=100&skip={skip}&search=catgirl&order=&verified=&sort=sold_desc");
+                var json = response.Content.ReadAsStringAsync().Result;
+                var res = JsonConvert.DeserializeObject<IEnumerable<NFTradeSalesResponseModel>>(json);
+                var list = res.ToList();
+                final.AddRange(list);
+            }
+
+            return final;
         }
     }
 }
