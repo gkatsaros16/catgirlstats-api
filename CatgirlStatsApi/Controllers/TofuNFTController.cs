@@ -23,5 +23,11 @@ namespace CatgirlStatsApi.Controllers
         {
             return await _tofuNFTService.GetTofuNFTs();
         }         
+
+        [HttpGet]
+        public async Task<IEnumerable<NFTradeSalesResponseModel>> GetTofuNFTSales()
+        {
+            return await _tofuNFTService.GetTofuNFTSales();
+        }         
     }
 }

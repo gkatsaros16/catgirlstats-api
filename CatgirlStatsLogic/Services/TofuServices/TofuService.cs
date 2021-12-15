@@ -56,5 +56,21 @@ namespace CatgirlStatsLogic.Services
                 IsBundle = x.Is_Bundle
             });
         }
+
+        public async Task<IEnumerable<NFTradeSalesResponseModel>> GetTofuNFTSales()
+        {
+            _http.DefaultRequestHeaders.Add("authority", "tofunft.com");         
+            _http.DefaultRequestHeaders.Add("x-api-key", "8csYTAMBq8fFmNNN2C0KXONb66ePLJ4v");         
+            _http.DefaultRequestHeaders.Add("referer", "https://tofunft.com/collection/catgirl-nft/items");         
+            var response = await _http.GetAsync("https://tofunft-api.com/xapi/activity/sales?contract=catgirl-nft&offset=0&limit=1000");
+            var json = response.Content.ReadAsStringAsync().Result;
+            var res = JsonConvert.DeserializeObject<SalesResponseModel>(json);
+            
+            return res.Data.Select(x => new NFTradeSalesResponseModel{
+                TokenID = x.NFT.Token_ID.ToString(),
+                Last_Sell = x.Price.ToString(),
+                Last_Sell_At = x.Created_At
+            });
+        }
     }
 }

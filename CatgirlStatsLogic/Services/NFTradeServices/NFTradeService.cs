@@ -34,7 +34,7 @@ namespace CatgirlStatsLogic.Services
 
         public async Task<IEnumerable<NFTradeSalesResponseModel>> GetNFTradeSales() 
         {        
-            var response = await _http.GetAsync("https://api.nftrade.com/api/v1/tokens?limit=100&skip=0&search=catgirl&order=&verified=&sort=sold_desc");
+            var response = await _http.GetAsync("https://api.nftrade.com//api/v1/tokens?limit=100&skip=0&contracts[]=f1232121-86c8-42d4-99ec-95326647663e&chains[]=56&search=&sort=sold_desc");
             var json = response.Content.ReadAsStringAsync().Result;
             Console.WriteLine(json);
             var res = JsonConvert.DeserializeObject<IEnumerable<NFTradeSalesResponseModel>>(json);

@@ -52,6 +52,7 @@ namespace CatgirlStatsApi
             services.AddScoped<IBNBService, BNBService>(); 
             services.AddScoped<ITofuNFTService, TofuNFTService>(); 
             services.AddScoped<INFTradeService, NFTradeService>(); 
+            services.AddScoped<ISupportService, SupportService>(); 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CatgirlStatsApi", Version = "v1" });
