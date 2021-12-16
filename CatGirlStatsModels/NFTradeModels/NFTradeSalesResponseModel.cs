@@ -5,6 +5,6 @@ namespace CatgirlStatsModels
         public string TokenID { get; set; }
         public string Last_Sell_At { get; set; }
         public string Last_Sell { get; set; }
-        public int? NyaScore { get; set; }
+        public long NyaScore { get; set; }
     }
 }
