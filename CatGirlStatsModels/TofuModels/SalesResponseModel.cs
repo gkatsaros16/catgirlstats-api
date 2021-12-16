@@ -21,5 +21,18 @@ namespace CatgirlStatsModels
     public class SalesResponseNFTModel
     {
         public int? Token_ID{ get; set; }
+        public SalesResponseNFTMetaModel Meta { get; set; }
+    }
+
+    public class SalesResponseNFTMetaModel
+    {
+        public IEnumerable<SalesResponseNFTMetaAttributesModel> Attributes { get; set; }
+    }
+
+    public class SalesResponseNFTMetaAttributesModel
+    {
+        public string Display_Type { get; set; }
+        public string Trait_Type { get; set; }
+        public dynamic Value { get; set; }
     }
 }
