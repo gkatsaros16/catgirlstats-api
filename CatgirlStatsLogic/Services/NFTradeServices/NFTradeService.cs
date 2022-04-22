@@ -46,7 +46,14 @@ namespace CatgirlStatsLogic.Services
             var skips = new[] {0, 100, 200, 300, 400};
             foreach (var skip in skips)
             {
-                var response = await _http.GetAsync($"https://api.nftrade.com/api/v1/tokens?limit=100&skip={skip}&search=catgirl&order=&verified=&sort=sold_desc");
+                var response = new HttpResponseMessage();
+                try {
+                    response = await _http.GetAsync($"https://api.nftrade.com/api/v1/tokens?limit=100&skip={skip}&search=catgirl&order=&verified=&sort=sold_desc");
+                } catch (Exception e) {
+                    Console.WriteLine(e.InnerException);
+                    Console.WriteLine(e.Message);
+                }
+                
                 var json = response.Content.ReadAsStringAsync().Result;
                 var res = JsonConvert.DeserializeObject<IEnumerable<NFTradeSalesResponseModel>>(json);
                 var list = res.ToList();
